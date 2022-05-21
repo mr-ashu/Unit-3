@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+    #counter{
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:20px;
+        width:80%;
+        margin: auto;
+       
+    }
+    img{
+        width:100%;
+        
+    }
+    #box{
+        
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+ 
+ h3,h4{
+     margin-left:10px;
+     height:8px;
+ }      
+button{
+    margin-left:20px;
+    margin-bottom: 15px;
+} 
+h1{
+    text-align:center;
+}
+</style>
+<body>
+    <h1>Products</h1>
+    <div id="counter">
+    </div>
+    
+</body>
+</html>
+<script>
+    
+     let arr=JSON.parse(localStorage.getItem("Products"));
+   
+     arr.forEach(function(e,index){
+         let box=document.createElement("div");
+         box.setAttribute("id","box");
+         let imag=document.createElement("img");
+         imag.setAttribute("src",e.image);
+         let nam=document.createElement("h3");
+         nam.innerText=e.name;
+         let categor=document.createElement("h4");
+         categor.innerText=e.category;
+         let gende=document.createElement("h4");
+         gende.innerText=e.gender;
+         let pric=document.createElement("h4");
+         pric.innerText=e.price;
+         let btn1=document.createElement("button");
+         btn1.innerText="Remove";
+         btn1.addEventListener("click",function(){
+            dltitm(e,index);
+         });
+       
+         let btn2=document.createElement("button");
+         btn2.innerText="Sold";
+          
+         box.append(imag,nam,categor,gende,pric,btn1,btn2);
+        
+       
+         document.getElementById("counter").append(box);
+         
+      
+     });
+  
+     function dltitm(e,index){
+      
+      arr.splice(index,1);
+      localStorage.setItem("Products",JSON.stringify(arr));
+     
+      window.location.reload();
+         
+      
+     
+     }
+   
+</script>

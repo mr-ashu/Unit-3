@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+    form{
+        display: grid;
+        width:50%;
+        margin: auto;
+        gap:10px;
+     
+       
+    }
+    input,select{
+        height:40px;
+        font-size:27px;
+        font-weight:bold;
+
+    }
+</style>
+<body>
+    <a href="product.html"><h1>product</h1></a>
+    <form  onsubmit="submitPdt(event)" id="product" >
+        <input type="text" placeholder="Product name" id="name">
+        <Select  id="category">
+            
+            <option >cloths</option>
+            <option >shose</option>
+            <option >Electronic</option>
+        </Select>
+        <input type="url" placeholder="Image url" id="image">
+        <input type="Number" placeholder="Price" id="price">
+        <Select id="gender">
+            <option>Male</option>
+            <option >Female</option>
+
+        </Select>
+       <select id="sold" >
+           <option >False</option>
+           <option >true</option>
+       </select>
+     
+        <input  type="submit" id="add">
+    </form>
+</body>
+</html>
+<script>
+    function Product(name, category, image, price,gender,sold){
+this.name=name;
+this.category=category;
+this.image=image;
+this.price=price;
+this.gender=gender;
+this.sold=sold;
+
+}
+
+let arr=JSON.parse(localStorage.getItem("Products"))||[];
+function submitPdt(e){
+    e.preventDefault();
+    let form=document.getElementById("product");
+    let name=product.name.value;
+    let category =product.category.value;
+    let image=product.image.value;
+    let price =product.price.value;
+    let gender=product.gender.value;
+   
+   
+
+    let p= new Product(name, category, image, price,gender,sold);
+    arr.push(p);
+   localStorage.setItem("Products", JSON.stringify(arr));
+   
+ 
+}
+</script>
