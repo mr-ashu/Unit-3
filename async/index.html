@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css"/>
+</head>
+<body>
+    
+    <div id="navbar">
+        <h3>Home</h3>
+        <div id="lsbtn">
+            <a href="login.html"><h3>Login</h3></a>
+            <a href="signup.html">  <h3>Signup</h3></a>
+          
+        </div>
+    </div>
+     <h1>Sliding -Photos</h1>
+    <div id="sliding"></div>
+</body>
+</html>
+<script>
+    let i=0;
+    let images=JSON.parse(localStorage.getItem("images"));
+    let box=document.getElementById("sliding");
+    setInterval(function(){
+        if(i==images.length){
+            i=0;
+        }
+        box.innerHTML=null;
+        let imge=images[i];
+        let img=document.createElement("img");
+        img.src=imge;
+        box.append(img);
+        i++;
+
+    },3000)
+</script>
