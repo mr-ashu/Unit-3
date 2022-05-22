@@ -18,13 +18,66 @@
         </div>
     </div>
      <h1>Sliding -Photos</h1>
-    <div id="sliding"></div>
+    <div id="sliding"> </div>
+      <!--  <div id="sort-buttons"> -->
+ <h1>Movies</h1>
+ <div id="movies">
+<!--Show list of movies here-->
+ </div> 
 </body>
 </html>
 <script>
+   
+   let data =[
+        {
+        name:"Singham",
+        date:"15/04/2010",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMy-A7JOa4aZb6zklLT-fzl8FZBo6uEUf6Ow&usqp=CAU",
+        IMDb:4.2,
+       },  {
+        name:"Singham",
+        date:"15/04/2010",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMy-A7JOa4aZb6zklLT-fzl8FZBo6uEUf6Ow&usqp=CAU",
+        IMDb:4.2,
+       },
+       {
+        name:"Singham",
+        date:"15/04/2010",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMy-A7JOa4aZb6zklLT-fzl8FZBo6uEUf6Ow&usqp=CAU",
+        IMDb:4.2,
+       },
+       {
+        name:"Singham",
+        date:"15/04/2010",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMy-A7JOa4aZb6zklLT-fzl8FZBo6uEUf6Ow&usqp=CAU",
+        IMDb:4.2,
+       },
+       {
+        name:"Singham",
+        date:"15/04/2010",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMy-A7JOa4aZb6zklLT-fzl8FZBo6uEUf6Ow&usqp=CAU",
+        IMDb:4.2,
+       },
+       {
+        name:"Singham",
+        date:"15/04/2010",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMy-A7JOa4aZb6zklLT-fzl8FZBo6uEUf6Ow&usqp=CAU",
+        IMDb:4.2,
+       },
+       {
+        name:"Singham",
+        date:"15/04/2010",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMy-A7JOa4aZb6zklLT-fzl8FZBo6uEUf6Ow&usqp=CAU",
+        IMDb:4.2,
+       },
+  
+    ]
+    
     let i=0;
     let images=JSON.parse(localStorage.getItem("images"));
+    console.log(images)
     let box=document.getElementById("sliding");
+    i=i+1;
     setInterval(function(){
         if(i==images.length){
             i=0;
@@ -37,4 +90,18 @@
         i++;
 
     },3000)
+
+ data.forEach(function(elem){
+     let box =document.createElement("div");
+     let img=document.createElement("img");
+     img.src=elem.img;
+     let name=document.createElement("h2");
+     name.innerText=elem.name;
+     let date =document.createElement("h4");
+     date.innerText=elem.date;
+     let rating=document.createElement("h4");
+     rating.innerText=elem.IMDb;
+     box.append(img,name,date,rating);
+     document.getElementById("movies").append(box);
+ })
 </script>
