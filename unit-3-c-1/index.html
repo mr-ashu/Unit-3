@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+<style>
+  #navbar{
+    background-color:brown;
+    padding: 7px;
+    border-radius:7px;
+  }
+  #show_products{
+    display:block;
+    background-color:brown;
+    color:#fff;
+    align-items:center;
+    padding:8px;
+    margin-top:px;
+    margin: 10px;
+    font-weight:bold;
+    border:none;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  a{
+    text-decoration: none;
+    
+  }
+  h2{
+    text-align:center;
+  }
+  #products{
+    display:grid;
+    width:40%;
+    margin: auto;
+    gap:10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  padding:50px;
+    
+  }
+  #products>input{
+    font-size:30px;
+  }
+  #add_product{
+    padding:8px;
+    display:grid;
+    width:30%;
+    margin: auto;
+    border-radius: 8px;
+  }
+</style>
+  <body>
+   
+    
+    <div id="navbar">
+      <a href="inventory.html"><button id="show_products">Show Product</button></a>
+      <!--Create Show Products button here, give id as "show_products". avoid making spelling mistakes in HTML id's-->
+    </div>
+    <div>
+      <h2>Add Products</h2>
+       <form  id="products">
+
+         <input type="text" placeholder="Type" id="type">
+         <input type="text" placeholder="Descripition" id="desc">
+         <input type="text" placeholder="Price" id="price">
+         <input type="text" placeholder="Image" id="image">
+        <input type="submit" id="add_product">
+
+       </form>
+
+       
+      
+    </div>
+  </body>
+</html>
+
+<script src="./scripts/index.js"></script>
