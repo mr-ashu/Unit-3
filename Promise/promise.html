@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color:rgb(221, 255, 0);
+        
+    }
+  #order,img{
+      display:block;
+       width:40%;
+       font-size:30px;
+       margin:auto;
+       margin-top:20px;
+  }
+  button{
+      display:block;
+      margin:auto;
+      font-size: 28px;
+      margin-top: 20px;
+      cursor: pointer;
+  }
+  h1,h2{
+      color:red;
+      font-size:50px;
+      font-weight: bold;
+      text-align:center;
+  }
+  hr{
+      color:red;
+      width:100%;
+      height:5px;
+      background-color: red;
+      
+  }
+  h4{
+      text-align:center;
+      font-size:30px;
+  }
+  #photo{
+     
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:20px;
+      width:90%;
+     
+      margin:auto;
+      margin-top:50px;
+      
+  }
+  #photo img{
+      width:100%;
+      height:400px;
+  }
+</style>
+<body>
+         <h1>Welcome to Our Dhaba</h1>
+        <hr> 
+    <select name id="order">
+        <option value="Menu">Menu</option>
+        <option value="Burger">Burger</option>
+        <option value="Pizza">Pizza</option>
+        <option value="Hot Chips">Hot Chips</option>
+        <option value="chicken">Chicken</option>
+        <option value="chilly-fry">Chilli-fry</option>
+        <option value="cocala">Cocala</option>
+        <option value="papsi">Pepsi</option>
+        <option value="cigrate">Cigrate</option>
+    </select>
+   
+    <h2></h2>
+   
+    <h4></h4>
+    <img id="image" src="https://c.tenor.com/g01carZ_O74AAAAM/indian-man-rolls-eyes-funny-gorilla.gif" alt >
+   
+    <button onclick="order()">Order</button>
+    <div id="photo">
+       
+        <img src="https://www.jiomart.com/images/product/original/490004176/pepsi-2-l-product-images-o490004176-p490004176-0-202203170742.jpg" alt="">
+        <img src="https://www.bigbasket.com/media/uploads/p/l/40222667-2_1-coca-cola-soft-drink.jpg" alt="">
+        <img src="https://assets.epicurious.com/photos/5c745a108918ee7ab68daf79/5:4/w_3129,h_2503,c_limit/Smashburger-recipe-120219.jpg" alt="">
+      
+        <img src="https://static.toiimg.com/thumb/53007558.cms?width=1200&height=900" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIi7PveT5HVxmBz0-U0AjwVbwOrFcNi_1FGw&usqp=CAU" alt="">
+        
+    </div>
+ 
+</body>
+</html>
+<script>
+ 
+function status(){
+return true;
+}
+let i=0;
+
+
+function order(){
+    let image = document.querySelector('#image');
+    image.src='https://media2.giphy.com/media/yvDlcaEhhJo0o/giphy.gif?cid=ecf05e472gkcqh1qfbcu263id7zyqvb6gxd9yh6aevzs1obs&rid=giphy.gif&ct=g'
+    let h2 = document.querySelector('h2');
+    let ready_img = document.querySelector('#ready_img');
+    let order = document.querySelector('#order').value; 
+   
+    let h4 = document.querySelector('h4');
+    i++;
+    if(order=="Menu"){
+        h4.innerText='Order Number: '+"null";
+        h2.innerText= "Please select food items"
+        h2.style.color="green"
+    }
+    else{
+        h4.innerText='Order Number: '+i;
+        h2.innerText='Your '+order+' is being prepared'
+    }
+  
+    
+    let promis=new Promise(function(resolve,reject){
+        
+       if(order!="Menu"){
+        let time=Math.random()*8000
+
+       if(status){  
+           setTimeout(function(){     
+             resolve(order)
+           },time)
+    
+         }
+        else{
+             reject("Sorry we can't server this")
+           }
+       }
+      
+    });
+
+    promis.then(function(res){
+       
+            if(order=="Menu"){
+                image.src="https://i.gifer.com/HUYy.gif"
+                h2.innerText= "Please select food items"
+                h4.innerText='Order Number: '+"null";
+    
+            }
+            else{
+                image.src="https://c.tenor.com/0ONej2lskAgAAAAC/waiter-gob.gif"
+                h2.innerText='Your '+order+' is  ready '
+            }
+           
+   
+
+    });
+
+
+
+}
+
+</script>
