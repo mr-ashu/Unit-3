@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        display:grid;
+        grid-template-columns: repeat(4,1fr);
+        gap:20px;
+    }
+    a{
+        text-decoration:none;
+    }
+</style>
+<body>
+    <a href="index.html">  <h2>Video</h2></a>
+  
+    <div id="box"></div>
+</body>
+</html>
+<script>
+let arr=[];
+let video=JSON.parse(localStorage.getItem("vid"));
+console.log(arr)
+arr.push(video);
+arr.forEach((el)=>{
+        let div=document.createElement("div")
+        let iframe=document.createElement("iframe");
+        iframe.src=`https://www.youtube.com/embed/${el.videoId}`;
+        iframe.allow="fullscreen";
+        let h=document.createElement("h3");
+        h.innerText=el.title;
+        div.append(iframe,h);
+        
+        document.getElementById("box").append(div);
+
+
+    })
+
+
+
+
+
+</script>

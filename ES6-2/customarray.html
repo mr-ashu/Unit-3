@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+class CArray{
+    constructor(){
+        this.length=0;
+        this.arr=[];
+    }
+  push(el){
+      this.arr[this.length]=el
+      this.length++;
+  }
+pop(){
+    this.arr.pop();
+    this.length--;
+}
+
+
+ 
+top(){
+   return this.arr[this.length-1];
+}
+print(){
+    return this.arr;
+}
+reverse(){
+    return this.arr.reverse();
+}
+}
+
+let a1=new CArray();
+a1.push(2);
+a1.push(6);
+a1.push(9)
+a1.push(6)
+a1.push(13)
+a1.push(144)
+// console.log(a1);
+console.log(a1.reverse())
+a1.pop();
+// console.log(a1)
+//console.log(a1.top())
+
+//console.log(a1.print())
+ 
+ 
+
+
+
+
+
+
+</script>
