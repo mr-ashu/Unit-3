@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <style>
+    #voucher_list{
+      display:grid;
+      grid-template-columns: repeat(4,1fr);
+      gap:20px;
+      text-align:center;
+    }
+    #navbar {
+     background-color: blue;
+     display:flex;
+     justify-content:space-between;
+     font-size:30px;
+     font-weight: bold;
+     color:white;
+     padding-left: 20px;
+    
+}
+a{
+  display:block;
+  text-decoration:none;
+  color: white;
+  margin-top:20px;
+  margin-right: 20px;
+}
+span{
+  margin-right: 20px;
+}
+    
+  </style>
+  <body>
+    <div id="navbar">
+      <a href="index.html">Home</a>
+      <a href="purchase.html">Purchase</a>
+      <span id="wallet_balance"></span>
+    </div>
+    
+     <div id="voucher_list"></div>
+    
+  </body>
+</html>
+<script src="scripts/voucher.js">
+ 
+
+</script>
